@@ -10,7 +10,10 @@
     "bin": {
         "aboudmod": "./index.js"
     },
-
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AbdrrahimDahmani/JS-Quiz-CLI-Tool.git"
+    },
     "author": "Abderrahim Dahmani",
     "license": "ISC",
     "dependencies": {
