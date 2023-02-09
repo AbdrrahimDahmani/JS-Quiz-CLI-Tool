@@ -10,6 +10,7 @@ import { createSpinner } from "nanospinner";
 let playerName;
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 const customChalk = new Chalk({ level: 3 });
+
 async function welcome() {
   const rainbowTitle = chalkAnimation.rainbow(
     "Hi! do you want to test you JavaScript knowledge? \n"
@@ -56,6 +57,7 @@ async function question1() {
     answers.question1 == "let is block-scoped and var is function-scoped"
   );
 }
+
 async function question2() {
   const answers = await inquirer.prompt({
     name: "question2",
@@ -69,6 +71,7 @@ async function question2() {
   });
   return handleAnswer(answers.question2 == "var obj = {};");
 }
+
 async function question3() {
   const answers = await inquirer.prompt({
     name: "question3",
@@ -115,6 +118,7 @@ async function question5() {
     answers.question5 == "To refer to the current function or object"
   );
 }
+
 async function handleAnswer(isCorrect) {
   const spinner = createSpinner("Checking Answer...").start();
   await sleep();
