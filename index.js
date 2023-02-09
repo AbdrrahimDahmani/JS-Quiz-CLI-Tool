@@ -12,7 +12,7 @@ const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 const customChalk = new Chalk({ level: 3 });
 async function welcome() {
     const rainbowTitle = chalkAnimation.rainbow(
-        "Hi brothers and sisters do you want to be a millionaire? \n"
+        "Hi! do you want to test you JavaScript knowledge? \n"
     );
     await sleep();
     rainbowTitle.stop();
@@ -20,13 +20,11 @@ async function welcome() {
         `
         ${customChalk.bgGreen("How To Play")}
         ${customChalk.redBright.bold(
-          "First of all I'm inside you computer don't freak"
+          "First of all I'm just a process inside your computer don't freak"
         )}
-        I will ask you only some small programming questions
+        I will ask you only some small JS questions
         If you get any question wrong i will be ${chalk.bgRed("Dead")}
-        So answer corectlly you piece of ${customChalk
-          .hex("#964B00")
-          .bold("Shit!")}
+        So try to focus and answer corectlly.
         `
     );
 }
@@ -94,14 +92,16 @@ async function handleAnswer(isCorrect) {
         spinner.success({ text: `Nice work ${playerName}` });
     } else {
         spinner.error({
-            text: `Game Over, ${playerName} ${customChalk.red("you are a looser!")}`,
+            text: `Game Over, ${playerName} ${customChalk.red(
+        "you should learn more!"
+      )}`,
         });
         process.exit(1);
     }
 }
 async function congrats() {
     console.clear();
-    const msg = `Congrats , ${playerName} !\n YOU ARE a Genius Programmer`;
+    const msg = `Congrats , ${playerName} !\n You Are a Good JS Programmer`;
     figlet(msg, (err, data) => {
         console.log(gradient.pastel.multiline(data));
     });
